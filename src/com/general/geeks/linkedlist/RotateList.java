@@ -18,7 +18,8 @@ public class RotateList {
 		RotateList rl = new RotateList();
 		rl.printLL(node);
 		System.out.println();
-		node = rl.rotateRight(node, 4);
+		node = rl.rotateRight(node, 3);
+
 		rl.printLL(node);
 		
 	}
@@ -27,7 +28,7 @@ public class RotateList {
 		
 		 if(null==head || k==0)
 	            return head;
-		
+
 		Node current = head;
 		
 		//first find kth node
@@ -42,12 +43,17 @@ public class RotateList {
 		if(k==length)
 			return head;
 		
+
 		k = k>length?(k%length):k;
 		
 		System.out.println("length is "+length);
 		
 		current = head;
-		for(int i=1;i<(length-k);i++) {
+
+
+
+		for(int i=1;i<(length-k+1);i++) {
+
 			current = current.next;
 		}
 		
