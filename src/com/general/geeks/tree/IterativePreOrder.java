@@ -1,5 +1,7 @@
 package com.general.geeks.tree;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 public class IterativePreOrder {
@@ -15,11 +17,11 @@ public class IterativePreOrder {
 		node.right.right = new TreeNode(40);
 		
 		//inorderRecursive(node);
-		inOrder(node);
+		preOrder(node);
 		
 	}
 	
-	public static void inOrder(TreeNode node) {
+	public static void preOrder(TreeNode node) {
 		
 		Stack<TreeNode> stack = new Stack<>();
 		stack.push(node);
@@ -42,5 +44,26 @@ public class IterativePreOrder {
 		inorderRecursive(node.left);;
 		inorderRecursive(node.right);
 	}
+	
+public List<Integer> preorderTraversal(TreeNode root) {
+	
+	List<Integer> list = new LinkedList();
+	Stack<TreeNode> stack = new Stack<>();
+	stack.push(root);
+	while(!stack.isEmpty()) {
+		
+		TreeNode node = stack.pop();
+		
+		if(null!=node) {
+			list.add(node.data);
+			stack.push(node.right);
+			stack.push(node.left);
+		}
+		
+	}
+	
+	return list;
+        
+    }
 
 }

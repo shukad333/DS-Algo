@@ -1,5 +1,7 @@
 package com.general.geeks.tree;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 public class IterativePostOrder {
@@ -48,4 +50,32 @@ public class IterativePostOrder {
 		postOrderRec(node.right);
 		System.out.println(node.data);
 	}
+	
+public List<Integer> postorderTraversal(TreeNode root) {
+        	
+	List<Integer> list = new LinkedList();
+	Stack<TreeNode> s1 = new Stack<>();
+	Stack<TreeNode> s2 = new Stack<>();
+	
+	s1.push(root);
+	
+	while(!s1.isEmpty()) {
+		
+		TreeNode node = s1.pop();
+		s2.push(node);
+		if(null!=node) {
+			s1.push(node.left);
+		}
+		if(null!=node) {
+			s1.push(node.right);
+		}
+	}
+	
+	while(!s2.isEmpty()) {
+		TreeNode node = s2.pop();
+		list.add(node.data);
+	}
+	
+	return list;
+    }
 }
