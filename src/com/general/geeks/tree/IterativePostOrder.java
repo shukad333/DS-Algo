@@ -58,6 +58,7 @@ public List<Integer> postorderTraversal(TreeNode root) {
 	Stack<TreeNode> s2 = new Stack<>();
 	
 	s1.push(root);
+	String s = new String();
 	
 	while(!s1.isEmpty()) {
 		
