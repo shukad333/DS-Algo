@@ -12,22 +12,27 @@ public class QueueUsingStacks {
 	Stack<Integer> s2 = new Stack();
 
 	public void push(int element) {
+		while(!s1.isEmpty()) {
+			s2.push(s1.pop());
+		}
 		s1.push(element);
+		while(!s2.isEmpty()) {
+			s1.push(s2.pop());
+		}
 	}
 	
-	public int get() {
+	public int pop() {
 		
-		while(!s1.isEmpty()) {
-			int ele = s1.pop();
-			s2.push(ele);
-		}
+		return s1.pop();
 		
-		int pop = s2.pop();
-		while(!s2.isEmpty()) {
-			push(s2.pop());
-		}
-		return pop;
-		
+	}
+	
+	public int peek() {
+		return s1.peek();
+	}
+	
+	public boolean empty() {
+		return s1.isEmpty();
 	}
 
 	
@@ -37,10 +42,11 @@ public class QueueUsingStacks {
 		q.push(20);
 		q.push(30);
 		
-		System.out.println(q.get());
+		System.out.println(q.pop());
+		System.out.println(q.peek());
 		q.push(100);
-		System.out.println(q.get());
-		System.out.println(q.get());
-		System.out.println(q.get());
+		System.out.println(q.pop());
+		System.out.println(q.pop());
+		System.out.println(q.pop());
 	}
 }
