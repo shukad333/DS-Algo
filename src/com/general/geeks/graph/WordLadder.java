@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Queue;
 
 public class WordLadder {
-	
+
 	public static void main(String[] args) {
-		
-		String[] arr = {"hot","dot","dog","lot","log","cog"};
+
+		String[] arr = { "hot", "dot", "dog", "lot", "log", "cog" };
 		List<String> wordList = new ArrayList();
 		wordList.add("hot");
 		wordList.add("dot");
@@ -26,45 +26,42 @@ public class WordLadder {
 
 		Queue<SItem> queue = new LinkedList();
 		queue.add(new SItem(beginWord, 1));
-		
-		while(!queue.isEmpty()) {
-			
+
+		while (!queue.isEmpty()) {
+
 			SItem item = queue.poll();
-			
-		
-			
-			for(Iterator<String> iterator = wordList.iterator();iterator.hasNext();) {
-			
-			String str = iterator.next();
-			if(isAdjacent(str, item.word)) {
-				SItem it = new SItem(str, item.len+1);
-				
-				queue.add(it);
-				iterator.remove();
-				
-				
-				if(str.equals(endWord)) {
-					return it.len;
+
+			for (Iterator<String> iterator = wordList.iterator(); iterator.hasNext();) {
+
+				String str = iterator.next();
+				if (isAdjacent(str, item.word)) {
+					SItem it = new SItem(str, item.len + 1);
+
+					queue.add(it);
+					iterator.remove();
+
+					if (str.equals(endWord)) {
+						return it.len;
+					}
 				}
+
 			}
 
-		}
-		
 		}
 		return 0;
 
 	}
 
 	private boolean isAdjacent(String s1, String s2) {
-		
+
 		int count = 0;
-		for(int i=0;i<s1.length();i++) {
-			
-			if(s1.charAt(i)!=s2.charAt(i)) {
+		for (int i = 0; i < s1.length(); i++) {
+
+			if (s1.charAt(i) != s2.charAt(i)) {
 				count++;
 			}
-			
-			if(count > 1) {
+
+			if (count > 1) {
 				return false;
 			}
 		}

@@ -48,6 +48,7 @@ public class BFS {
 		bfs.addEdge(1, 20);
 		bfs.addEdge(10, 30);
 		bfs.addEdge(10,1);
+		bfs.addEdge(1, 15);
 		
 		bfs.printBFS(1);
 	}
