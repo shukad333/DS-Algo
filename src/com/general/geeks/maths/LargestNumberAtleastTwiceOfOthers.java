@@ -36,7 +36,6 @@ public class LargestNumberAtleastTwiceOfOthers {
 		
 		int largest = Integer.MIN_VALUE+1;
 		int secondLargest = Integer.MIN_VALUE;
-		int currentDoubleLargest = Integer.MIN_VALUE;
 		int index = 0;
 		for(int i=0;i<nums.length;i++) {
 			
