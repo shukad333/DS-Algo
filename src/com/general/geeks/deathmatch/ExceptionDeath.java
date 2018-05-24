@@ -11,7 +11,7 @@ public class ExceptionDeath<T extends Exception> {
 	}
 	
 	
-	final List<String> list = new ArrayList<>() {{
+	final List<String> list = new ArrayList() {{
 		add("Shuhail");
 		System.out.println(list);
 	}};

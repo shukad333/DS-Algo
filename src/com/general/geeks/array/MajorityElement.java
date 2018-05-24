@@ -1,5 +1,8 @@
 package com.general.geeks.array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * 
  * Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
@@ -8,11 +11,14 @@ You may assume that the array is non-empty and the majority element always exist
  */
 public class MajorityElement {
 	
-	public static void main(String[] args) {
-		
-		int[] nums = {1};
-		System.out.println(new MajorityElement().majorityElement(nums));
-	}
+	  public static void main(String[] args) {
+			Map<String,Integer> map = new HashMap<>();
+			map.put("Shu", 4);
+			System.out.println(map.computeIfAbsent("Shu", a->sum(1)));
+		}
+		  private static int sum(int k) {
+			  return k+1;
+		  }
 
 	public int majorityElement(int[] nums) {
 		int count=1,majorityElement=nums[0];
