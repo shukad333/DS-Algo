@@ -56,7 +56,7 @@ public class Trie {
 		trie.insert("Navami");
 		
 		System.out.println(trie.isPresent("12"));
-		System.out.println(trie.isPresent("Shuhail"));
+		System.out.println(trie.isPresent("Navami"));
 		
 	}
 
