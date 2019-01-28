@@ -16,7 +16,7 @@ public class ContainsDuplicates2 {
 
 	public static void main(String[] args) {
 
-		int[] nums = { 1, 2, 3, 1, 2, 3 };
+		int[] nums = { 1, 2, 3, 10, 20, 1 };
 		System.out.println(new ContainsDuplicates2().containsNearbyDuplicate(nums, 3));
 
 	}

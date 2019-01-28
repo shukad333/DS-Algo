@@ -18,7 +18,7 @@ public class GenerateParanthesis {
 	
 	public static void main(String[] args) {
 		
-		List<String> res = new GenerateParanthesis().generateParenthesis(2);
+		List<String> res = new GenerateParanthesis().generateParenthesis(4);
 		for(String s : res) {
 			System.out.println(s);
 		}
@@ -34,7 +34,6 @@ public class GenerateParanthesis {
 		generate(result, new char[n*2], n, 0, 0, 0);
 		return result;
 		
-
 	}
 
 	public void generate(LinkedList<String> paranthesis, char[] str, int n, int pos, int open, int close) {

@@ -7,8 +7,9 @@ public class RemoveDuplicatesFromSortedList {
 		Node node = new Node(1);
 		node.next = new Node(1);
 		node.next.next = new Node(1);
-//		node.next.next.next = new Node(2);
-//		node.next.next.next.next = new Node(3);
+		node.next.next.next = new Node(2);
+		node.next.next.next.next = new Node(3);
+		node.next.next.next.next.next = new Node(3);
 //		
 		node = new RemoveDuplicatesFromSortedList().deleteDuplicates(node);
 		while(node!=null) {

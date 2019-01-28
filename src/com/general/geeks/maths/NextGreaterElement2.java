@@ -1,5 +1,7 @@
 package com.general.geeks.maths;
 
+import java.util.Arrays;
+
 /**
  * Given a circular array (the next element of the last element is the first
  * element of the array), print the Next Greater Number for every element. The
@@ -18,5 +20,34 @@ package com.general.geeks.maths;
  *
  */
 public class NextGreaterElement2 {
+	
+	public static void main(String[] args) {
+		System.out.println(Arrays.toString(new NextGreaterElement2().nextGreaterElements(new int[] {1,2,1})));
+	}
+
+	public int[] nextGreaterElements(int[] nums) {
+		
+		int[] numsExtended = new int[2*nums.length];
+		int max = Integer.MIN_VALUE;
+		for(int i=0;i<2*nums.length;i++) {
+			numsExtended[i] = nums[i%nums.length];
+			max = Math.max(numsExtended[i], max);
+		}
+		
+		int[] resp = new int[nums.length];
+		
+		for(int i=0;i<nums.length;i++) {
+			resp[i] = -1;
+			if(nums[i]==max)continue;
+			for(int j=i+1;j<2*nums.length;j++) {
+				if(numsExtended[j]>nums[i]) {
+					resp[i] = numsExtended[j];
+					break;
+				}
+			}
+		}
+		return resp;
+
+	}
 
 }

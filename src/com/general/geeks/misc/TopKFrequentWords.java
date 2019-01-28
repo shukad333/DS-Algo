@@ -38,7 +38,7 @@ public class TopKFrequentWords {
 	
 	public List<String> topKFrequent(String[] words, int k) {
 		
-		Map<String, Integer> map = new HashMap();
+		Map<String, Integer> map = new HashMap<>();
 		for(String s : words) {
 			if(!map.containsKey(s)) {
 				map.put(s, 1);
@@ -59,7 +59,7 @@ public class TopKFrequentWords {
 			}
 		}
 		
-		List<String> list = new LinkedList();
+		List<String> list = new LinkedList<>();
 		while(!queue.isEmpty()) {
 			list.add(0, queue.poll().getKey());
 		}

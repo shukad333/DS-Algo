@@ -3,6 +3,8 @@ package com.general.geeks.tree;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Serialization is the process of converting a data structure or object into a
@@ -62,12 +64,13 @@ public class SerializeDeserializeTree {
 	// Decodes your encoded data to tree.
 	public TreeNode deserialize(String data) {
 		
-		Deque<String> deque = new LinkedList();
-		deque.addAll(Arrays.asList(data.split(Seperator)));
-		return deserializeTree(deque);
+		
+		Queue<String> queue = new LinkedList();
+		queue.addAll(Arrays.asList(data.split(Seperator)));
+		return deserializeTree(queue);
 	}
 	
-	private TreeNode deserializeTree(Deque<String> data) {
+	private TreeNode deserializeTree(Queue<String> data) {
 		
 		String val = data.remove();
 		if(NULL_VAL.equals(val)) {

@@ -34,32 +34,31 @@ import java.util.Queue;
  */
 public class CloneGraph {
 
-	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-		
-		if(null == node) {
-			return null;
-		}
-		Queue<UndirectedGraphNode> queue = new LinkedList();
-		queue.add(node);
-		Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap();
-		map.put(node, new UndirectedGraphNode(node.label));
+	 public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+	     if(null == node) {
+				return null;
+			}
+			Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+			queue.add(node);
+			Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
+			map.put(node, new UndirectedGraphNode(node.label));
 
-		while (!queue.isEmpty()) {
-			UndirectedGraphNode polledNode = queue.poll();
-			for (UndirectedGraphNode graph : node.neighbors) {
+			while (!queue.isEmpty()) {
+				UndirectedGraphNode polledNode = queue.poll();
+				for (UndirectedGraphNode graph : polledNode.neighbors) {
 
-				if (!map.containsKey(graph)) {
-					map.put(graph, new UndirectedGraphNode(graph.label));
-					queue.add(graph);
+					if (!map.containsKey(graph)) {
+						map.put(graph, new UndirectedGraphNode(graph.label));
+						queue.add(graph);
+					}
+	                
+					map.get(polledNode).neighbors.add(map.get(graph));
+
 				}
 
-				map.get(polledNode).neighbors.add(map.get(graph));
-
 			}
-
+			return map.get(node);
 		}
-		return map.get(node);
-	}
 
 }
 

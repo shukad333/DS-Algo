@@ -1,5 +1,6 @@
 package com.general.geeks.queandstack;
 
+import java.util.Collections;
 import java.util.Stack;
 
 /**
@@ -32,6 +33,8 @@ public class ScoreofParanthesis {
 	}
 
 	public int scoreOfParentheses(String S) {
+		
+		
 
 		int result = 0;
 		Stack<Integer> stack = new Stack<>();

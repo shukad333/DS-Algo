@@ -34,8 +34,8 @@ public class SingleNumber3 {
 			diff ^= i;
 		}
 		
-		//System.out.println(Integer.toBinaryString(diff));
-		//System.out.println(Integer.toBinaryString(-diff));
+		System.out.println(Integer.toBinaryString(diff));
+		System.out.println(Integer.toBinaryString(-diff));
 		diff &= -diff;
 		System.out.println(Integer.toBinaryString(diff));
 		

@@ -3,7 +3,7 @@ package com.general.geeks.array.dynamicprogramming;
 public class EditDistance {
 	
 	public static void main(String[] args) {
-		System.out.println(editDistance("Shuhail", "Bhu"));
+		System.out.println(editDistance("Shuhail", "Shuh"));
 	}
 	
 	static int editDistance(String s1 , String s2) {

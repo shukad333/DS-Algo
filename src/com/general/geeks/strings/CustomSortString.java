@@ -26,5 +26,35 @@ package com.general.geeks.strings;
  *
  */
 public class CustomSortString {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(new CustomSortString().customSortString("cba", "abcd"));
+		
+	}
+
+	public String customSortString(String S, String T) {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		int[] sChar = new int[26];
+		
+		for(char c : T.toCharArray())
+			sChar[c-'a']++;
+		
+		for(char c : S.toCharArray()) {
+			
+			while(sChar[c-'a']-->0)
+				sb.append(c);
+		}
+		
+		for(char c = 'a';c<='z';c++) {
+			while(sChar[c-'a']-->0)
+				sb.append(c);
+		}
+		
+		return sb.toString();
+
+	}
 
 }
