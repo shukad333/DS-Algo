@@ -28,7 +28,7 @@ public class Candies {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new Candies().candy(new int[] {1,2,87,87,87,2,1}));
+		System.out.println(new Candies().candy(new int[] {1,3,2,2,1}));
 		
 	}
 

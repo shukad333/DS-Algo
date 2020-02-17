@@ -23,7 +23,7 @@ package com.general.geeks.misc;
 public class UglyNumber {
 
 	public static void main(String[] args) {
-		
+
 		System.out.println(new UglyNumber().isUgly(21));
 	}
 
@@ -39,7 +39,7 @@ public class UglyNumber {
 			} else
 				return false;
 		}
-		return num==1;
+		return num == 1;
 
 	}
 

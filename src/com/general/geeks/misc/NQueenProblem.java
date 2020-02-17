@@ -14,6 +14,18 @@ import java.util.List;
  *
  */
 public class NQueenProblem {
+	
+	public static void main(String[] args) {
+		
+		List<List<String>> resp = new NQueenProblem().solveNQueens(8);
+		for(List<String> r : resp) {
+			System.out.println(r);
+			System.out.println();
+		}
+		
+		System.out.println(resp.size());
+		
+	}
 
 	 public List<List<String>> solveNQueens(int n) {
 		

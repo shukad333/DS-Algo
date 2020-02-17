@@ -21,6 +21,24 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
  *
  */
 public class ConvertSortedArrayToBST {
+	
+	public static void main(String[] args) {
+		
+		
+		int[] arr = new int[] {-10,-3,0,5,9};
+		TreeNode bst = new ConvertSortedArrayToBST().sortedArrayToBST(arr);
+		new ConvertSortedArrayToBST().preOrder(bst);
+		
+	}
+	
+	private void preOrder(TreeNode node) {
+		if(null==node)
+			return;
+		
+		System.out.println(node.data);
+		preOrder(node.left);
+		preOrder(node.right);
+	}
 
 	public TreeNode sortedArrayToBST(int[] nums) {
 		
@@ -34,10 +52,10 @@ public class ConvertSortedArrayToBST {
 		if(low>high)
 			return null;
 		
-		int mid = low + (high-high)/2;
+		int mid = low + (high-low)/2;
 		TreeNode node = new TreeNode(nums[mid]);
 		node.left = helper(nums, low, mid-1);
-		node.right = helper(nums, low, mid-1);
+		node.right = helper(nums, mid+1, high);
 		
 		return node;
 	}

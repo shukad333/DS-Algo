@@ -47,6 +47,9 @@ public class InsertRemoveRandomInOn {
 		System.out.println(in.insert(13));
 		System.out.println(in.insert(13));
 		System.out.println(in.insert(13));
+		System.out.println(in.insert(4));
+		System.out.println(in.insert(1));
+		System.out.println(in.remove(4));
 		System.out.println(in.getRandom());
 		System.out.println(in.getRandom());
 	}

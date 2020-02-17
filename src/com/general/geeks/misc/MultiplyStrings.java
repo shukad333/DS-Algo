@@ -25,7 +25,7 @@ public class MultiplyStrings {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new MultiplyStrings().multiply("123", "456"));
+		System.out.println(new MultiplyStrings().multiply("123", "0"));
 	}
 
 	public String multiply(String num1, String num2) {

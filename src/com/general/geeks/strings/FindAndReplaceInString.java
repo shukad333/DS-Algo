@@ -52,6 +52,7 @@ import java.util.List;
 public class FindAndReplaceInString {
 
 	public static void main(String[] args) {
+	
 		System.out.println(new FindAndReplaceInString().findReplaceString("abcd", new int[] { 0, 2 },
 				new String[] { "a", "cd" }, new String[] { "eee", "ffff" }));
 

@@ -1,10 +1,20 @@
 package com.general.geeks.misc;
 
+import java.util.PriorityQueue;
+
 public class ThirdLargest {
 
 	public static void main(String[] args) {
 
 		int[] nums = { 2, 2 };
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		pq.add(4);
+		pq.add(5);
+		pq.add(2);
+		System.out.println(pq.peek());
+		System.out.println(pq.poll());
+		System.out.println(pq.peek());
+		System.out.println(pq.poll());
 		System.out.println(new ThirdLargest().thirdMax(nums));
 
 	}

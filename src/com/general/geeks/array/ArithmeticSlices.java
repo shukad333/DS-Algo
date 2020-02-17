@@ -38,21 +38,8 @@ public class ArithmeticSlices {
 	static String str;
 	public static void main(String[] args) {
 		
-		System.out.println(bool.get());
 		
-		boolean should = null==str;
-		System.out.println(should);
-		
-		try {
-			
-			throw new RuntimeException();
-		}
-		
-		catch(Exception e) {
-			System.out.println("Caught");
-		}
-		
-		//System.out.println(new ArithmeticSlices().numberOfArithmeticSlices(new int[] {1,2,3,4}));
+		System.out.println(new ArithmeticSlices().numberOfArithmeticSlices(new int[] {1,2,3,4}));
 		
 	}
 

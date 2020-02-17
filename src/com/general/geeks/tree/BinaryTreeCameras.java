@@ -21,7 +21,9 @@ public class BinaryTreeCameras {
 	
 	public static void main(String[] args) {
 		
+		//System.out.println((char)('a'+4));
 		TreeNode node = new TreeNode(1);
+		
 //		node.left = new TreeNode(2);
 //		node.left.left = new TreeNode(3);
 //		node.left.left.right = new TreeNode(4);

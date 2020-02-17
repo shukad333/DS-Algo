@@ -33,5 +33,15 @@ public class MaximumSubArray {
 		return max;
 
 	}
+	
+	public int maxSubArrayApproach2(int[] nums) {
+		int maxEndingHere = nums[0],maxSoFar = nums[0];
+		for(int i=1;i<nums.length;i++) {
+			maxEndingHere = Math.max(nums[i], nums[i]+maxEndingHere);
+			maxSoFar = Math.max(maxSoFar, maxEndingHere);
+		}
+		
+		return maxSoFar;
+	}
 
 }

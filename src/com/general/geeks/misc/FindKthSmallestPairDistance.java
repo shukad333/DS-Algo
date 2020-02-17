@@ -18,6 +18,7 @@ import java.util.Arrays;
 public class FindKthSmallestPairDistance {
 
 	public static void main(String[] args) {
+		
 		System.out.println(new FindKthSmallestPairDistance().smallestDistancePair(new int[] { 1, 3, 1 }, 1));
 	}
 

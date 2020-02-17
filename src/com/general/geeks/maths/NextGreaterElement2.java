@@ -1,6 +1,7 @@
 package com.general.geeks.maths;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * Given a circular array (the next element of the last element is the first
@@ -22,7 +23,24 @@ import java.util.Arrays;
 public class NextGreaterElement2 {
 	
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(new NextGreaterElement2().nextGreaterElements(new int[] {1,2,1})));
+		System.out.println(Arrays.toString(new NextGreaterElement2()._nextGreaterElements(new int[] {1,2,1})));
+	}
+	
+	public int[] _nextGreaterElements(int[] nums) {
+		
+		Stack<Integer> stack = new Stack<>();
+		int[] resp = new int[nums.length];
+		Arrays.fill(resp, -1);
+		int n = nums.length;
+		for(int i=0;i<2*nums.length;i++) {
+			while(!stack.isEmpty() && stack.peek()<nums[i%n]) {
+				resp[stack.pop()] = nums[i%n];
+			}
+			stack.push(i);
+		}
+		
+		return resp;
+		
 	}
 
 	public int[] nextGreaterElements(int[] nums) {

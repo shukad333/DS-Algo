@@ -1,5 +1,8 @@
 package com.general.geeks.misc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Given two integers representing the numerator and denominator of a fraction,
  * return the fraction in string format.
@@ -19,12 +22,51 @@ package com.general.geeks.misc;
  *
  */
 public class FractionToRecurringDecimal {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(0<<1);
+		//System.out.println(new FractionToRecurringDecimal().fractionToDecimal(22, 7));
+		
+	}
 
 	public String fractionToDecimal(int numerator, int denominator) {
 		
-		String resp = "";
+		String sign = ((numerator>0) ^ (denominator>0))?"-":"";
 		
-		return resp;
+		long num = Math.abs((long)numerator);
+		long den = Math.abs((long)denominator);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(sign);
+		sb.append(num/den);
+		
+		num%=den;
+		
+		if(num==0) {
+			return sb.toString();
+		}
+		
+		sb.append(".");
+		Map<Long, Integer> map = new HashMap<>();
+		map.put(num, sb.length());
+		
+		while(num!=0) {
+			num*=10;
+			sb.append(num/den);
+			num%=den;
+			if(map.containsKey(num)) {
+				int index = map.get(num);
+				sb.insert(index, "(");
+				sb.append(")");
+				break;
+			}
+			else {
+				map.put(num, sb.length());
+			}
+		}
+		
+		return sb.toString();
 
 	}
 

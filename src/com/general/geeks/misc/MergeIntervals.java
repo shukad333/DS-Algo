@@ -1,3 +1,4 @@
+
 package com.general.geeks.misc;
 
 import java.util.ArrayList;
@@ -22,40 +23,40 @@ import java.util.List;
 public class MergeIntervals {
 	
 	public static void main(String[] args) {
-		List<Interval> list = new ArrayList<>();
-		Interval interval = new Interval(1,3);
+		List<IntervalA> list = new ArrayList<>();
+		IntervalA interval = new IntervalA(1,3);
 		list.add(interval);
-		interval = new Interval(2,6);
+		interval = new IntervalA(2,6);
 		list.add(interval);
-		interval = new Interval(8,10);
+		interval = new IntervalA(8,10);
 		list.add(interval);
-		interval = new Interval(15,18);
+		interval = new IntervalA(15,18);
 		list.add(interval);
 		System.out.println(new MergeIntervals().merge(list));
 	}
 
-	public List<Interval> merge(List<Interval> intervals) {
+	public List<IntervalA> merge(List<IntervalA> intervals) {
 		
-		List<Interval> resp = new ArrayList<>();
+		List<IntervalA> resp = new ArrayList<>();
 		
 		intervals.sort((i1,i2) -> i1.start-i2.start);
 		
 		int start = intervals.get(0).start;
 		int end = intervals.get(0).end;
 		
-		for(Interval interval : intervals) {
+		for(IntervalA interval : intervals) {
 			if(interval.start<=end) {
 				end = Math.max(interval.end, end);
 			}
 			else {
-				resp.add(new Interval(start, end));
+				resp.add(new IntervalA(start, end));
 				start = interval.start;
 				end = interval.end;
 			}
 		}
 		
 		//last one
-		resp.add(new Interval(start,end));
+		resp.add(new IntervalA(start,end));
 		return resp;
 
 	}

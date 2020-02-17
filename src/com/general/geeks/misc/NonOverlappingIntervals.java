@@ -81,5 +81,11 @@ class Interval {
 		start = s;
 		end = e;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "start:"+start+" end:"+end;
+	}
 
 }

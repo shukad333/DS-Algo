@@ -1,5 +1,8 @@
 package com.general.geeks.misc;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Write a program to find the n-th ugly number.
  * 
@@ -18,15 +21,50 @@ package com.general.geeks.misc;
 public class UglyNumberII {
 	
 	public static void main(String[] args) {
-		System.out.println(new UglyNumberII().nthUglyNumber(10));
+		System.out.println(new UglyNumberII().nthUglyNumber(5));
+//		System.out.println(new UglyNumberII().solve(2, 3, 5, 3));
 	}
 
+	
+	 public ArrayList<Integer> solve(int A, int B, int C, int D) {
+	        
+	        
+	        Integer[] resp = new Integer[D];
+	        
+	        int a=A,b=B,c=C;
+	        resp[0] = 1;
+	        
+//	        for(int i=0;i<D;i++)
+//	            resp[i] = 0;
+//	        
+	        int i1=0,i2=0,i3=0;
+	        ArrayList<Integer> res = new ArrayList<>();
+	        res.add(0);
+	        for(int i=1;i<D;i++) {
+	            
+	            int min = Math.min(a, Math.min(b, c));
+	            resp[i] = min;
+	            if(a==min) {
+	                a = A*resp[++i1];
+	                
+	            }
+	            if(b==min) {
+	                b=B*resp[++i2];
+	                
+	            }
+	            if(c==min) {
+	                c=C*resp[++i3];
+	            }
+	        }
+	        
+	        return new ArrayList<>(Arrays.asList(resp));
+	    }
 	//Using dp ... Very good solution
 	public int nthUglyNumber(int n) {
 		
 		int[] resp = new int[n];
 		
-		int a=2,b=3,c=5;
+		int a=2,b=11,c=13;
 		resp[0] = 1;
 		
 		int i1=0,i2=0,i3=0;

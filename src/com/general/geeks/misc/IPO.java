@@ -1,5 +1,7 @@
 package com.general.geeks.misc;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 /**
@@ -41,6 +43,9 @@ public class IPO {
 		int[] profits = new int[] {1,2,3};
 		int[] capital = new int[] {0,1,1};
 		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		System.out.println(map.get("sji"));
+		
 		System.out.println(new IPO().findMaximizedCapital(2, 0, profits, capital));
 	}
 
@@ -53,6 +58,7 @@ public class IPO {
 			capitalQueue.offer(new int[] {Capital[i],Profits[i]});
 		}
 		
+
 		for(int i=0;i<k;i++) {
 			
 			if(!capitalQueue.isEmpty() && capitalQueue.peek()[0]<=W) {

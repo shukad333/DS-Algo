@@ -40,7 +40,7 @@ public class CourseSchedule2 {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(Arrays.toString(new CourseSchedule2().findOrder(4, new int[][] {{1,0},{2,0},{3,1},{3,2}})));
+		System.out.println(Arrays.toString(new CourseSchedule2().findOrder(5, new int[][] {{1,0},{2,0},{3,1},{3,2}})));
 	}
 
 	public int[] findOrder(int numCourses, int[][] prerequisites) {

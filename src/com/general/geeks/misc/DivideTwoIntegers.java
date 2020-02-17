@@ -28,7 +28,7 @@ public class DivideTwoIntegers {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new DivideTwoIntegers().divide(-2147483648, 2));
+		System.out.println(new DivideTwoIntegers().divide(-2056269396, -7906947));
 		
 	}
 
@@ -47,6 +47,7 @@ public class DivideTwoIntegers {
 	            return dividend;
 			
 			int ans = 1;
+			
 			
 			int sign = dividend<1 ^ divisor<1 ? -1 : 1;
 			long div = Math.abs((long)divisor);

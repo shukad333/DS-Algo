@@ -24,7 +24,7 @@ import java.util.List;
 public class LongestSubstringWithoutRepeatingCharacters {
 	
 	public static void main(String[] args) {
-		System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("dvdf"));
+		System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("pwwkew"));
 	}
 
 	public int lengthOfLongestSubstring(String s) {

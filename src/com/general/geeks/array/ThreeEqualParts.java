@@ -41,8 +41,49 @@ public class ThreeEqualParts {
 		System.out.println(Arrays.toString(new ThreeEqualParts().threeEqualParts(new int[] { 0,0,1,0,1,1 })));
 
 	}
-
+	
 	public int[] threeEqualParts(int[] A) {
+		
+		int lastIndex = -1;
+		
+		int counts = 0;
+		int numOnes = (int)Arrays.stream(A).filter(i->i==1).count();
+		for(int i=A.length-1;i>=0;i--) {
+			if(A[i]==1)
+				counts++;
+			if(counts==numOnes/3) {
+				lastIndex = i;
+				break;
+			}
+		}
+		
+		
+		int firstIndex = findIndex(A, 0, lastIndex);
+		if(firstIndex<0)
+			return new int[] {-1,-1};
+		
+		int secondIndex = findIndex(A, firstIndex, lastIndex);
+		if(secondIndex<0)
+			return new int[] {-1,-1};
+		
+		return new int[] {firstIndex,secondIndex+1};
+		
+	
+	}
+	
+	private int findIndex(int[] A , int start , int last) {
+		while(A[start]==0)
+			start++;
+		while(last<A.length) {
+			if(A[start]!=A[last])
+				return -1;
+			start++;
+			last++;
+		}
+		return start;
+	}
+
+	public int[] _threeEqualParts(int[] A) {
 
 		// find the number of 1's in the array
 

@@ -39,6 +39,7 @@ public class LFUCache {
 	
 	public static void main(String[] args) {
 		
+		
 		LFUCache cache = new LFUCache(5);
 		cache.put(1, 110);
 		cache.put(4, 440);

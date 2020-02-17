@@ -29,6 +29,26 @@ public class SwapNodes {
 		}
 		
 	}
+	
+	public ListNode swapPairs(ListNode a) {
+	    if(a == null) return null;
+	    
+	    ListNode dummyHead = new ListNode(0);
+	    ListNode curr = a, next = curr.next, tail = dummyHead;
+	    while(curr != null && next != null){
+	        ListNode nextNext = next.next;
+	        next.next = curr;
+	        tail.next = next;
+	        tail = curr;
+	        curr = nextNext;
+	        if(curr != null)
+	            next = curr.next;
+	    }
+	    if(curr == null) tail.next = null;
+	    else if(next == null) tail.next = curr;
+	    
+	    return dummyHead.next;
+	}
 
 	public Node swapPairs(Node head) {
 		

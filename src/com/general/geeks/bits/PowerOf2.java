@@ -1,5 +1,6 @@
 package com.general.geeks.bits;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +24,7 @@ public class PowerOf2 {
 	public static void main(String[] args) {
 		
 		System.out.println(new PowerOf2().isPowerOfTwo(16));
+		System.out.println(new PowerOf2().power("147573952589676412928"));
 		List<String> list = new ArrayList<>();
 		list.add("aa");
 		list.add("BB");
@@ -33,5 +35,24 @@ public class PowerOf2 {
 		return (n&(n-1))==0;
 		
 	}
+	
+	 public int power(String a) {
+		 
+		 BigInteger bi = new BigInteger(a);
+		 
+		 if(bi.compareTo(BigInteger.ONE)==0 || bi.compareTo(BigInteger.ZERO)==0)
+			 return 1;
+		 
+		 System.out.println(bi.bitLength());
+		 System.out.println(bi.toByteArray());
+		 for(int i=0;i<bi.bitLength()-1;i++) {
+			 
+			 if(bi.testBit(i))
+				 return 0;
+				 
+		 }
+		 
+		 return bi.testBit(bi.bitLength()-1)?1:0;
+	 }
 
 }

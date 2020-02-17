@@ -5,7 +5,7 @@ public class ExcelSheetColumnNumber {
 	public static void main(String[] args) {
 		
 		char s = 'Z';
-		System.out.println(new ExcelSheetColumnNumber().titleToNumber("BB"));
+		System.out.println(new ExcelSheetColumnNumber().titleToNumber("CCC"));
 	}
 	public int titleToNumber(String s) {
 		

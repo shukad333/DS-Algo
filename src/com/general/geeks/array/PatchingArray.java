@@ -29,7 +29,7 @@ public class PatchingArray {
 
 	public static void main(String[] args) {
 
-		System.out.println(new PatchingArray().minPatches(new int[] { 1, 3 }, 6));
+		System.out.println(new PatchingArray().minPatches(new int[] { 1, 5,10 }, 20));
 
 	}
 

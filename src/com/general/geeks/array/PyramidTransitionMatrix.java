@@ -1,5 +1,10 @@
 package com.general.geeks.array;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * 
  * We are stacking blocks to form a pyramid. Each block has a color which is a one letter string, like `'Z'`.
@@ -38,5 +43,59 @@ Letters in all strings will be chosen from the set {'A', 'B', 'C', 'D', 'E', 'F'
  *
  */
 public class PyramidTransitionMatrix {
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+	public boolean pyramidTransition(String bottom, List<String> allowed) {
+		
+		Map<String, ArrayList<String>> map = new HashMap<>();
+		for(String s : allowed) {
+			String starting = s.substring(0,2);
+			if(!map.containsKey(starting))map.put(starting,new ArrayList<>());
+			map.get(starting).add(s.substring(2));
+		}
+		
+		
+		return helper(bottom, map);
+
+	}
+	
+	private boolean helper(String bottom,Map<String,ArrayList<String>> map) {
+		
+		if(bottom.length()==1) 
+			return true;
+		for(int i=0;i<bottom.length()-1;i+=2) {
+			if(!map.containsKey(bottom.substring(i, i+2))) return false;
+		}
+		
+		List<String> list = new ArrayList<>();
+		setUpNextBottom(bottom, map, 0, new StringBuilder(), list);
+		for(String s : list) {
+			if(helper(s, map))
+				return true;
+		}
+		return false;
+		
+	}
+	
+	
+	private void setUpNextBottom(String bottom,Map<String,ArrayList<String>> map,int index,StringBuilder sb,List<String> nextList) {
+		
+		if(index==bottom.length()-1) {
+				nextList.add(sb.toString());
+				return;
+		}
+		
+		for(String s : map.get(bottom.substring(index, index+2))) {
+			sb.append(s);
+			setUpNextBottom(bottom, map, index+1, sb,nextList);
+			sb.deleteCharAt(sb.length()-1);
+		}
+		
+	}
+	
 
 }

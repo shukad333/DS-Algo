@@ -2,8 +2,13 @@ package com.general.geeks.tree;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Stack;
 
+class Abc {
+	
+	int data;
+}
 public class IterativePreOrder {
 	
 	public static void main(String[] args) {
@@ -16,8 +21,11 @@ public class IterativePreOrder {
 		node.right.left = new TreeNode(15);
 		node.right.right = new TreeNode(40);
 		
-		//inorderRecursive(node);
-		preOrder(node);
+		inorderRecursive(node);
+		//preOrder(node);
+		
+		
+		
 		
 	}
 	
@@ -40,8 +48,10 @@ public class IterativePreOrder {
 	public static void inorderRecursive(TreeNode node) {
 		if(null==node)
 			return;
-		System.out.println(node.data);
+		
 		inorderRecursive(node.left);;
+		System.out.println(node.data);
+		
 		inorderRecursive(node.right);
 	}
 	

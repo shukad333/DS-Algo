@@ -34,6 +34,29 @@ public class Heaters {
 	public static void main(String[] args) {
 		System.out.println(new Heaters().findRadius(new int[] { 1, 2, 3, 4 }, new int[] { 1, 4 }));
 	}
+	
+	public int _findRadius(int[] houses, int[] heaters) {
+		
+		Arrays.sort(heaters);
+		
+		int resp = 0;
+		for(int h : houses) {
+			
+			int index = Arrays.binarySearch(heaters, h);
+			if(index<0)
+				index = -(index+1);
+			
+			int d1 = index-1>=0 ? h-heaters[index-1] : Integer.MAX_VALUE;
+			int d2 = index<heaters.length ? heaters[index] - h : Integer.MAX_VALUE;
+			
+			resp = Math.max(resp, Math.min(d1, d2));
+			
+		}
+		
+		return resp;
+		
+		
+	}
 
 	public int findRadius(int[] houses, int[] heaters) {
 

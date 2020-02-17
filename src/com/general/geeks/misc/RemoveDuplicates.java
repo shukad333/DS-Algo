@@ -1,5 +1,9 @@
 package com.general.geeks.misc;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Given a sorted array nums, remove the duplicates in-place such that each
  * element appear only once and return the new length.
@@ -30,14 +34,34 @@ public class RemoveDuplicates {
 
 	public static void main(String[] args) {
 			
-		int[] nums = {1,1,2};
-		System.out.println(new RemoveDuplicates().removeDuplicates(nums));
+		int[] nums = {5000,5000,5000};
+		System.out.println(new RemoveDuplicates().removeDuplicates(Arrays.asList(5000,5000,5000)));
 		for(int i : nums) {
-			System.out.print(i+" ");
+			//System.out.print(i+" ");
 		}
 		
 		
 	}
+	
+	 public int removeDuplicates(List<Integer> a) {
+	        
+	       
+	        int start = 0,index=0;
+	        
+	        
+	        for(int i=1;i<a.size();i++) {
+	            
+	            if((int)a.get(i)!=(int)a.get(index)) {
+	                start++;
+	                index = i;
+	                a.set(start,a.get(index));
+	            }
+	           
+	        }
+	        
+	      
+	        return start+1;
+	    }
 
 	public int removeDuplicates(int[] nums) {
 

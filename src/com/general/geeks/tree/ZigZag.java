@@ -24,7 +24,29 @@ public class ZigZag {
 		}
 	}
 	
-		public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+		
+		List<List<Integer>> resp = new ArrayList<>();
+		levelOrderNewApproach(root, resp, 0);
+		return resp;
+	}
+	
+	
+	private void levelOrderNewApproach(TreeNode root,List<List<Integer>> resp,int height) {
+		
+		if(null==root)
+			return;
+		if(height==resp.size()) {
+			resp.add(new ArrayList<>());
+		}
+		
+		resp.get(height).add(root.data);
+		levelOrderNewApproach(root.left,resp,height+1);
+		levelOrderNewApproach(root.right,resp,height+1);
+		
+	}
+	
+		public List<List<Integer>> _zigzagLevelOrder(TreeNode root) {
 			List<List<Integer>> lists = new ArrayList();
 			int height = height(root);
 			boolean direction = true;

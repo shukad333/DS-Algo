@@ -37,7 +37,14 @@ public class SlidingWindowMaximum {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(Arrays.toString(new SlidingWindowMaximum().maxSlidingWindow(new int[] {1,-1}, 1)));
+		Deque<Integer> dequeu = new ArrayDeque<>();
+		
+		dequeu.add(1);
+		dequeu.add(2);
+		dequeu.add(3);
+		System.out.println(dequeu.peekLast());
+		System.out.println(dequeu.peek());
+		System.out.println(Arrays.toString(new SlidingWindowMaximum().maxSlidingWindow(new int[] {1,3,-1,-3,5,3,6,7}, 3)));
 		
 	}
 

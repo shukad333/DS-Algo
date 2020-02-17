@@ -18,7 +18,7 @@ public class RestoreIPAddresses {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new RestoreIPAddresses().restoreIpAddresses("2352551113"));
+		System.out.println(new RestoreIPAddresses().restoreIpAddresses("0100100"));
 		
 	}
 
@@ -48,7 +48,7 @@ public class RestoreIPAddresses {
 	
 	private boolean isValidIP(String ip) {
 		
-		if(ip.length()<1 || ip.length()>3 || ip.startsWith("0") || Integer.parseInt(ip)>255)
+		if(ip.length()<1 || ip.length()>3 || (ip.startsWith("0") && ip.length()>1) || Integer.parseInt(ip)>255)
 			return false;
 		
 		return true;

@@ -41,6 +41,17 @@ Each node will have a unique integer value from 0 to 1000.
  *
  */
 public class IncreasingOrderSearchTree {
+	
+	public static void main(String[] args) {
+		
+		TreeNode node = new TreeNode(10);
+		node.left = new TreeNode(5);
+		node.right = new TreeNode(100);
+		
+		TreeNode resp = new IncreasingOrderSearchTree().increasingBST(node);
+		new IncreasingOrderSearchTree().preOrder(resp);
+		
+	}
 
 	public TreeNode increasingBST(TreeNode root) {
 		
@@ -57,6 +68,16 @@ public class IncreasingOrderSearchTree {
 		root.left = null;
 		root.right = increasingOrderBST(root.right, parent);
 		return resp;
+	}
+	
+	public void preOrder(TreeNode node) {
+		if(null==node)
+			return ;
+		
+		System.out.println(node.data+" ");
+		preOrder(node.left);
+		preOrder(node.right);
+		
 	}
 
 }

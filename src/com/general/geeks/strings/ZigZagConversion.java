@@ -34,7 +34,7 @@ public class ZigZagConversion {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new ZigZagConversion().convert("A", 2));
+		System.out.println(new ZigZagConversion().convert("PAYPALISHIRING", 4));
 		
 	}
 
@@ -45,29 +45,50 @@ public class ZigZagConversion {
         }
 
 		StringBuilder[] sb = new StringBuilder[numRows];
-		int index = 0;
-		while (index < s.length()) {
-			for (int i = 0; i < numRows && index<s.length(); i++) {
-				if(sb[i]==null)
-					sb[i] = new StringBuilder();
-				sb[i].append(s.charAt(index++));
-
-			}
+		
+		int index =  0;
+		for(int i=0;i<numRows;i++) {
+			sb[i] = new StringBuilder();
+		}
+		while(index < s.length()) {
 			
-			for(int j=numRows-2;j>0 && index<s.length();j--) {
-				if(sb[j]==null)
-					sb[j] = new StringBuilder();
-				sb[j].append(s.charAt(index++));
-				
+			for(int i=0;i<numRows-1 && index<s.length();i++) {
+				sb[i].append(s.charAt(index++));
+			}
+			for(int i=numRows-2;i>=0 && index<s.length();i--) {
+				sb[i].append(s.charAt(index++));
 			}
 		}
 		
-		String resp = sb[0].toString();
-		for(int i=1;i<numRows;i++) {
-			resp+=sb[i].toString();
+		for(int i=1;i<numRows-1;i++) {
+			sb[0].append(sb[i]);
 		}
-
-		return resp;
+		
+		return sb[0].toString();
+		
+//		int index = 0;
+//		while (index < s.length()) {
+//			for (int i = 0; i < numRows && index<s.length(); i++) {
+//				if(sb[i]==null)
+//					sb[i] = new StringBuilder();
+//				sb[i].append(s.charAt(index++));
+//
+//			}
+//			
+//			for(int j=numRows-2;j>0 && index<s.length();j--) {
+//				if(sb[j]==null)
+//					sb[j] = new StringBuilder();
+//				sb[j].append(s.charAt(index++));
+//				
+//			}
+//		}
+//		
+//		String resp = sb[0].toString();
+//		for(int i=1;i<numRows;i++) {
+//			resp+=sb[i].toString();
+//		}
+//
+//		return resp;
 
 	}
 

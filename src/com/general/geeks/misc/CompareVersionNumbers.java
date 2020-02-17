@@ -24,12 +24,13 @@ package com.general.geeks.misc;
 public class CompareVersionNumbers {
 	
 	public static void main(String[] args) {
-		System.out.println(new CompareVersionNumbers().compareVersion("0.1", "1.1"));
+		System.out.println(new CompareVersionNumbers().compareVersion("444444444444444444444444", "4444444444444444444444444"));
 	}
 
 	public int compareVersion(String version1, String version2) {
 		
-		int v1=0,v2=0,i=0,j=0;
+		double v1=0,v2=0;
+		int i=0,j=0;
 		while(i<version1.length() || j<version2.length()) {
 			
 			while(i<version1.length() && version1.charAt(i)!='.') {

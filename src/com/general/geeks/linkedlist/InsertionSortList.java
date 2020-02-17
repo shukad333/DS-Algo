@@ -25,6 +25,23 @@ Output: -1->0->3->4->5
  */
 public class InsertionSortList {
 	
+	public static void main(String[] args) {
+		
+		Node node = new Node(4);
+		node.next = new Node(2);
+		node.next.next = new Node(1);
+		node.next.next.next = new Node(3);
+		
+		Node ressp = new InsertionSortList().insertionSortList(node);
+		
+		while(null!=ressp) {
+			System.out.println(ressp.data+"---->");
+			ressp = ressp.next;
+		}
+		
+		
+	}
+	
 	public Node insertionSortList(Node head) {
 		
 		Node resp = new Node(0);
@@ -38,7 +55,7 @@ public class InsertionSortList {
 			
 			next = curr.next;
 			
-			while(null!=pre.next && curr.data<pre.next.data) {
+			while(null!=pre.next && curr.data>pre.next.data) {
 				
 				pre = pre.next;
 			}

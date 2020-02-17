@@ -30,7 +30,7 @@ public class TopologicalSort {
 	}
 
 	// A recursive function used by topologicalSort
-	void topologicalSortUtil(int v, boolean visited[], Stack stack) {
+	void topologicalSortUtil(int v, boolean visited[], Stack<Integer> stack) {
 		// Mark the current node as visited.
 		visited[v] = true;
 		Integer i;

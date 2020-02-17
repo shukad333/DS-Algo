@@ -25,24 +25,24 @@ public class InsertInterval {
 	
 	public static void main(String[] args) {
 		
-		List<Interval> list = new ArrayList<>();
-		Interval interval = new Interval(1,2);
+		List<IntervalA> list = new ArrayList<>();
+		IntervalA interval = new IntervalA(1,2);
 		list.add(interval);
-		interval = new Interval(3,5);
+		interval = new IntervalA(3,5);
 		list.add(interval);
-		interval = new Interval(6,7);
+		interval = new IntervalA(6,7);
 		list.add(interval);
-		interval = new Interval(8,10);
+		interval = new IntervalA(8,10);
 		list.add(interval);
-		interval = new Interval(12,16);
+		interval = new IntervalA(12,16);
 		list.add(interval);
 		
-		System.out.println(new InsertInterval().insert(list, new Interval(4,8)));
+		System.out.println(new InsertInterval().insert(list, new IntervalA(4,8)));
 	}
 
-	public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+	public List<IntervalA> insert(List<IntervalA> intervals, IntervalA newInterval) {
 		
-		List<Interval> resp = new ArrayList<>();
+		List<IntervalA> resp = new ArrayList<>();
 		
 		int i=0;
 		while(i<intervals.size() && intervals.get(i).end<newInterval.start) {
@@ -52,7 +52,7 @@ public class InsertInterval {
 		//we found the place to insert now 
 		
 		while(i<intervals.size() && newInterval.end>=intervals.get(i).start) {
-			newInterval = new Interval(Math.min(intervals.get(i).start, newInterval.start),Math.max(intervals.get(i).end, newInterval.end));
+			newInterval = new IntervalA(Math.min(intervals.get(i).start, newInterval.start),Math.max(intervals.get(i).end, newInterval.end));
 			i++;
 		}
 		

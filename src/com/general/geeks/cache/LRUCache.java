@@ -83,6 +83,14 @@ public class LRUCache {
 	
 	public static void main(String[] args) {
 		
+		Map<String, String> map = new HashMap<>();
+		map.put("A", "Shu");
+		map.put("Ab", "ShuA");
+		System.out.println(map.values().toString());
+		map.entrySet().stream().map(entry -> {
+			System.out.println(entry.getValue());
+			return entry;});
+		
 		LRUCache cache = new LRUCache(4);
 		cache.set(12, 102);
 		cache.set(13, 103);

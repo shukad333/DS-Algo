@@ -18,6 +18,18 @@ package com.general.geeks.misc;
  *
  */
 public class WordSearch {
+	
+	public static void main(String[] args) {
+		
+		char[][] board = {{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+		
+		int i=0,j=0;
+		System.out.println(board[i][j]);
+		board[i][j]^=256;
+		System.out.println(board[i][j]);
+		board[i][j]^=256;
+		System.out.println(board[i][j]);
+	}
 
 	public boolean exist(char[][] board, String word) {
 		

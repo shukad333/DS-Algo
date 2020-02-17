@@ -17,7 +17,7 @@ public class PerfectSquares {
 
 	public static void main(String[] args) {
 		
-		System.out.println(new PerfectSquares().numSquares(1));
+		System.out.println(new PerfectSquares().numSquares(4));
 	}
 
 	public int numSquares(int n) {

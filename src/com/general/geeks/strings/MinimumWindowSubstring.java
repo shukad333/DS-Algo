@@ -20,7 +20,7 @@ public class MinimumWindowSubstring {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new MinimumWindowSubstring().minWindow("SHUHAILKADAVATH", "LAD"));
+		System.out.println(new MinimumWindowSubstring().minWindow("ADOBECODEBANC", "ABC"));
 	}
 
 	public String minWindow(String s, String t) {
@@ -56,7 +56,7 @@ public class MinimumWindowSubstring {
 			//start removing the unwanted characters from it .
 			if(count==t.length()) {
 				
-				while(sChar[s.charAt(start)]>tChar[s.charAt(start)] || tChar[s.charAt(start)]==0) {
+				while(sChar[s.charAt(start)]>tChar[s.charAt(start)]) {
 					
 					if(sChar[s.charAt(start)] > tChar[s.charAt(start)]) {
 						sChar[s.charAt(start)]--;

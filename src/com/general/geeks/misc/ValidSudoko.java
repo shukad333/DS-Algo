@@ -18,6 +18,13 @@ import java.util.Set;
  *
  */
 public class ValidSudoko {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(0%3);
+		System.out.println(2%3);
+		
+	}
 
 	public boolean isValidSudoku(char[][] board) {
 		
@@ -32,7 +39,7 @@ public class ValidSudoko {
 				if(board[i][j]!='.' && !columns.add(board[i][j]))
 					return false;
 				
-				if(board[j][i]!='.' && !rows.add(board[j][j]))
+				if(board[j][i]!='.' && !rows.add(board[j][i]))
 					return false;
 				
 				int squareRow = 3*(i/3);

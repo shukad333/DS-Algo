@@ -2,6 +2,7 @@ package com.general.geeks.array.dynamicprogramming;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Given an array of unique integers, each integer is strictly greater than 1.
@@ -30,6 +31,8 @@ public class BinaryTreeWithFactors {
 	public static void main(String[] args) {
 		
 		System.out.println(new BinaryTreeWithFactors().numFactoredBinarydps(new int[] {2,4,10,20}));
+		Map<Integer, Integer> map = new HashMap<>();
+		
 	}
 
 	public int numFactoredBinarydps(int[] A) {

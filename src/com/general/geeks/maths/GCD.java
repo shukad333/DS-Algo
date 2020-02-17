@@ -8,12 +8,8 @@ public class GCD {
 		System.out.println(GCD(23,46));
 	}
 	public static int GCD(int a , int b) {
-		if(a==b) {
-			return a;
-		}
-		if(a>b) {
-			return GCD(a-b,b);
-		}
-		return GCD(a,b-a);
+		if (b == 0) 
+	        return a; 
+	    return GCD(b, a % b);
 	}
 }

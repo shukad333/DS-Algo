@@ -1,6 +1,8 @@
 package com.general.geeks.misc;
 
+import java.util.Map;
 import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
@@ -26,15 +28,21 @@ public class MinStack {
 	
 	public static void main(String[] args) {
 		MinStack ms = new MinStack();
-		ms.push(-2);
-		ms.push(0);
-		ms.push(-3);
+		ms.push(10);
+		ms.push(3);
+		ms.push(3);
 		System.out.println(ms.getMin());
 		ms.pop();
 		System.out.println(ms.top());
 		System.out.println(ms.getMin());
 		ms.pop();
 		System.out.println(ms.top());
+		
+		Map<String, String> map = new ConcurrentHashMap<>();
+		map.put("shu", "Shams");
+		map.computeIfPresent("shu", (k,v)->"shuhail");
+		
+		System.out.println(map.get("shu"));
 	}
 	
 	int min = Integer.MAX_VALUE;

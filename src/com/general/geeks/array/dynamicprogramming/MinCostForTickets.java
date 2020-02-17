@@ -49,7 +49,8 @@ public class MinCostForTickets {
 	
 	public static void main(String[] args) {
 		
-		List<String> list = Arrays.asList("Shuhail","nooru");
+		 final List<String> list = Arrays.asList("Shuhail","nooru");
+		list.remove(0);
 		
 		List<String> op = list.stream().filter(s->s.length()>100).collect(Collectors.toList());
 		System.out.println(op);
