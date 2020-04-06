@@ -85,4 +85,6 @@ if (sum == target) total++ Here I am checking for the case where the current ele
 
 	}
 
+	
+
 }

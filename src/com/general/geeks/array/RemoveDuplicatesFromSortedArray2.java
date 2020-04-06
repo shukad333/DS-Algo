@@ -48,7 +48,7 @@ public class RemoveDuplicatesFromSortedArray2 {
 	
 	public static void main(String[] args) {
 		
-		Arrays.sort(a);
+
 		System.out.println(new RemoveDuplicatesFromSortedArray2().removeDuplicates(new int[] {1,1,1,2,2,3}));
 		
 	}

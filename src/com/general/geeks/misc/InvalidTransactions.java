@@ -42,8 +42,8 @@ Each {amount} consist of digits, and represent an integer between 0 and 2000.
  */
 public class InvalidTransactions {
 
-	public List<String> invalidTransactions(String[] transactions) {
-
-	}
+//	public List<String> invalidTransactions(String[] transactions) {
+//
+//	}
 
 }

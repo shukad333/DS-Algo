@@ -30,14 +30,60 @@ row is guaranteed to be a permutation of 0...len(row)-1.
  *
  */
 public class CouplesHoldingHands {
-	
-	public static void main(String[] args) {
-		
-		System.out.println(new CouplesHoldingHands().minSwapsCouples(new int[] {0, 2, 1, 3}));
-		
+
+	private class UF {
+		private int[] parents;
+		public int count;
+		UF(int n) {
+			this.count = n;
+			this.parents = new int[n];
+
+			for(int i=0;i<n;i++)
+				parents[i] = i;
+		}
+
+		private int find(int i) {
+			if(parents[i]==i)
+				return i;
+			parents[i] = find(parents[i]);
+			return parents[i];
+		}
+
+		public void union(int x , int y) {
+			int findX = find(x);
+			int findY = find(y);
+			if(findX!=findY) {
+				this.count--;
+				parents[findX] = findY;
+			}
+		}
 	}
+	
+
 
 	public int minSwapsCouples(int[] row) {
+
+		int N = row.length/2;
+		UF uf = new UF(N);
+
+		for(int i=0;i<N;i++) {
+			int a = row[2*i];
+			int b = row[2*i+1];
+			uf.union(a/2,b/2);
+		}
+
+		return N-uf.count;
+
+	}
+
+
+	public static void main(String[] args) {
+
+		System.out.println(new CouplesHoldingHands().minSwapsCouples(new int[] {0, 2, 1, 3}));
+
+	}
+
+	public int _minSwapsCouples(int[] row) {
 		
 		/*
 		 * Map the from and two to a map ... 

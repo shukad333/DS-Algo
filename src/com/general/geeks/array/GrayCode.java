@@ -3,7 +3,6 @@ package com.general.geeks.array;
 import java.util.ArrayList;
 import java.util.List;
 
-import sun.applet.Main;
 
 /**
  * 

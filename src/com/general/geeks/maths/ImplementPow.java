@@ -30,8 +30,19 @@ public class ImplementPow {
 		
 		System.out.println(Integer.MIN_VALUE);
 		System.out.println(Integer.MAX_VALUE);
-		System.out.println(new ImplementPow().myPow(-1,-2147483648));
+		System.out.println(new ImplementPow()._myPow(2,10));
 		
+	}
+
+	public double _myPow(double x, int n) {
+
+		if(n==0)
+			return 1;
+		if(n%2==0)
+			return _myPow(x,n/2)*_myPow(x,n/2);
+		else
+			return x*_myPow(x,n/2)*_myPow(x,n/2);
+
 	}
 
 	public double myPow(double x, int n) {

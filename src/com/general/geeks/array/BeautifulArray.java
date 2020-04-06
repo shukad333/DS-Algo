@@ -35,6 +35,7 @@ public class BeautifulArray {
 	
 	public static void main(String[] args) {
 		
+		
 		System.out.println(Arrays.toString(new BeautifulArray().beautifulArray(4)));
 		
 	}

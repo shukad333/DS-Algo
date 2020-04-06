@@ -12,13 +12,29 @@ You may assume that the array is non-empty and the majority element always exist
 public class MajorityElement {
 
 	public static void main(String[] args) {
-		Map<String, Integer> map = new HashMap<>();
-		map.put("Shu", 4);
-		System.out.println(map.computeIfAbsent("Shu", a -> sum(1)));
+//
+		 System.out.println(new MajorityElement()._majorityElement(new int[]{1,2,3,4,6,2,8,2,2,2,2,2}));
 	}
 
 	private static int sum(int k) {
 		return k + 1;
+	}
+
+	public int _majorityElement(int[] nums) {
+
+		int[] bit = new int[32];
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = 0; j < 32; j++) {
+				bit[j] += (nums[i] >> j) & 1;
+			}
+		}
+		int majority = 0;
+		for (int j = 0; j < 32; j++) {
+			bit[j] = bit[j] > (nums.length / 2)? 1 : 0;
+			majority += bit[j] << j;
+		}
+		return majority;
+
 	}
 
 	public int majorityElement(int[] nums) {

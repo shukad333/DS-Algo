@@ -12,10 +12,33 @@ public class BitwiseAnd {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println(bitwiseAnd(7, 8));
+		System.out.println(bitwiseAnd(26, 30));
 	}
 
 	static int bitwiseAnd(int x, int y) {
+
+		/**
+		 *
+		 * int iterations=0;
+		 * 		while(x!=y) {
+		 * 			x>>=1;
+		 * 			y>>=1;
+		 * 			iterations++;
+		 *                }
+		 *
+		 */
+
+		int iterations=0;
+		while(x!=y) {
+			x>>=1;
+			y>>=1;
+			iterations++;
+		}
+
+		return x<<iterations;
+	}
+
+	static int _bitwiseAnd(int x, int y) {
 
 		int res = 0;
 		while (x > 0 && y > 0) {

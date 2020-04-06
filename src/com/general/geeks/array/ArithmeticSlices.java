@@ -36,6 +36,7 @@ public class ArithmeticSlices {
 	
 	static AtomicBoolean bool = new AtomicBoolean();
 	static String str;
+	
 	public static void main(String[] args) {
 		
 		

@@ -1,5 +1,7 @@
 package com.general.geeks.binarysearch;
 
+import java.util.List;
+
 /**
  * 
  * Given an integer array sorted in non-decreasing order, there is exactly one integer in the array that occurs more than 25% of the time.
@@ -25,7 +27,8 @@ Constraints:
 public class ElementAppearingMoreThan25Percent {
 	
 	public static void main(String[] args) {
-		
+
+
 		System.out.println(new ElementAppearingMoreThan25Percent().findSpecialInteger(new int[] {1,2,2,6,6,6,6,7,10}));
 		
 	}

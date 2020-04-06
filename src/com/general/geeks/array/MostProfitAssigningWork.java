@@ -1,7 +1,9 @@
 package com.general.geeks.array;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.TreeMap;
 
 /**
  * 
@@ -46,15 +48,42 @@ public class MostProfitAssigningWork {
 		String S = "Shuhail";
 		System.out.println(S.substring(0,S.length()-1));
 
-		int[] diff = new int[] { 85, 47, 57 };
-		int[] prof = new int[] { 24, 66, 99 };
-		int[] worker = new int[] { 40, 25, 25 };
+		int[] diff = new int[] { 2,4,6,8,10 };
+		int[] prof = new int[] { 10,20,30,40,50 };
+		int[] worker = new int[] { 4,5,6,7 };
 
 		System.out.println(new MostProfitAssigningWork().maxProfitAssignment(diff, prof, worker));
 
 	}
 
-	 public int maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
+	public int maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
+
+		TreeMap<Integer,Integer> map = new TreeMap<>();
+
+		map.put(0,0);
+		for(int i=0;i<difficulty.length;i++) {
+			map.put(difficulty[i],Math.max(profit[i],map.getOrDefault(difficulty[i],0)));
+		}
+
+
+		int resp = 0,best = 0;
+
+		for(int key : map.keySet()) {
+			best = Math.max(map.get(key),best);
+			map.put(key,best);
+		}
+
+		for(int i=0;i<worker.length;i++) {
+			resp+=map.floorEntry(worker[i]).getValue();
+		}
+
+		return resp;
+
+
+
+	}
+
+	 public int _maxProfitAssignment(int[] difficulty, int[] profit, int[] worker) {
 
 			PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) ->a[0] - b[0]);
 

@@ -54,7 +54,7 @@ public class CountSquareWithAllOnes {
 		
 		int[][] matrix = {{1,0,1},{1,1,0},{1,1,0}};
 		System.out.println(new CountSquareWithAllOnes().countSquares(matrix));
-		Math.ceil(a)
+
 		
 	}
 

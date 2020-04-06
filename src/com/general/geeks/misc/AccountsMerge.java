@@ -88,10 +88,10 @@ public class AccountsMerge {
 		emails.add("shukad11@gmail.com");
 		accounts.add(emails);
 		emails = new ArrayList<>();
-		emails.add("Shuhail");
-		emails.add("shukad2@gmail.com");
-		emails.add("shukad0@gmail.com");
-		emails.add("shukad14@gmail.com");
+		emails.add("Shuhails");
+		emails.add("shukad222@gmail.com");
+		emails.add("shukad02@gmail.com");
+		emails.add("shukad142@gmail.com");
 		
 		accounts.add(emails);
 

@@ -38,15 +38,15 @@ queries[i].length == 2
  */
 public class XORQueriesOfASubArray {
 
-	public int[] xorQueries(int[] arr, int[][] queries) {
-		
-		for(int i=1;i<arr.length;i++) {
-			arr[i] = arr[i] ^ arr[i-1];
-		}
-		
-		int[] resp = new int[arr.length];
-		
-
-	}
+//	public int[] xorQueries(int[] arr, int[][] queries) {
+//
+//		for(int i=1;i<arr.length;i++) {
+//			arr[i] = arr[i] ^ arr[i-1];
+//		}
+//
+//		int[] resp = new int[arr.length];
+//
+//
+//	}
 
 }

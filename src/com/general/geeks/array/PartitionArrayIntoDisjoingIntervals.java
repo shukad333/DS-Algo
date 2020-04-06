@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.collections.CollectionUtils;
 
 /**
  * 
@@ -47,8 +46,7 @@ public class PartitionArrayIntoDisjoingIntervals {
 		System.out.println(list.size());
 		
 		Set<String> set = new HashSet<>(); ;
-		
-		System.out.println(CollectionUtils.isEmpty(set));
+
 
 		System.out
 				.println(new PartitionArrayIntoDisjoingIntervals().partitionDisjoint(new int[] { 1, 1, 1, 0, 6, 12 }));

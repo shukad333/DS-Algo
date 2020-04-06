@@ -1,9 +1,16 @@
 package com.general.geeks.maths;
 
+import java.util.TreeMap;
+
 public class PrimeNumbersLessThanN {
 
 	public static void main(String[] args) {
-		
+
+		TreeMap<Integer,Integer> tm = new TreeMap<>();
+		tm.put(0,1123);
+		tm.put(10,1);
+		System.out.println(tm.floorKey(100)+" "+tm.floorEntry(9).getValue());
+		System.out.println(tm.ceilingKey(90)+" "+tm.ceilingEntry(8).getValue());
 		System.out.println(new PrimeNumbersLessThanN().countPrimes(15000));
 
 	}

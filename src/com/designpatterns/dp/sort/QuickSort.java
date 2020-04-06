@@ -1,6 +1,6 @@
 package com.designpatterns.dp.sort;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * 
@@ -16,14 +16,27 @@ public class QuickSort {
 
 		int[] arr = new int[] {4,3,7,6,0,1};
 		//System.out.println(((1+4)>>1));
-		new MergeSort().sort(arr);
+		new QuickSort().sort(arr);
+		//new QuickSort().a(new ArrayList<>());
 		System.out.println(Arrays.toString(arr));
+
+		Map<String,List<String>> map = new HashMap<>();
+//		List<String> l = map.getOrDefault("shu",new ArrayList<>());
+//		l.add("shu");
+
+
+
 	}
 	
 	public void sort(int[] arr) {
 		
 		sort(arr, 0, arr.length-1);
 		
+	}
+
+	private void a(List<String> a) {
+
+
 	}
 	
 	private void sort(int[] arr , int low,int high) {

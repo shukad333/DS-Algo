@@ -32,8 +32,8 @@ package com.general.geeks.misc;
  */
 public class SimilarGroupStringUnionFind {
 
-	public int numSimilarGroups(String[] A) {
-
-	}
+//	public int numSimilarGroups(String[] A) {
+//
+//	}
 
 }

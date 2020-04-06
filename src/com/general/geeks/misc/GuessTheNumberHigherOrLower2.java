@@ -2,7 +2,6 @@ package com.general.geeks.misc;
 
 import java.util.Collection;
 
-import org.apache.commons.collections.CollectionUtils;
 
 /**
  * 
@@ -37,7 +36,7 @@ public class GuessTheNumberHigherOrLower2 {
 	public static void main(String[] args) {
 		
 		Collection<GuessTheNumberHigherOrLower2> coll  =null;
-		CollectionUtils.isEmpty(coll);
+
 		System.out.println(new GuessTheNumberHigherOrLower2().getMoneyAmount(10));
 		
 	}

@@ -29,29 +29,29 @@ Your algorithm's time complexity must be better than O(n log n), where n is the 
 public class TopKFrequentElements {
 	
 	
-	public List<Integer> topKFrequent(int[] nums, int k) {
-		
-		PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a,b)-> b.getValue()-a.getValue());
-		
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int n : nums) {
-			map.putIfAbsent(n, 0);
-			map.put(n, map.get(n)+1);
-		}
-		
-		for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
-			pq.offer(entry);
-		}
-		
-		List<Integer> resp = new ArrayList<Integer>();
-		
-		while(resp.size()<k) {
-			Map.Entry<Integer, Integer> entry = pq.poll();
-			resp.add(entry.getKey());
-			pq.add()
-		}
-		
-		
-	}
+//	public List<Integer> topKFrequent(int[] nums, int k) {
+//
+//		PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a,b)-> b.getValue()-a.getValue());
+//
+//		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+//		for(int n : nums) {
+//			map.putIfAbsent(n, 0);
+//			map.put(n, map.get(n)+1);
+//		}
+//
+//		for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+//			pq.offer(entry);
+//		}
+//
+//		List<Integer> resp = new ArrayList<Integer>();
+//
+//		while(resp.size()<k) {
+//			Map.Entry<Integer, Integer> entry = pq.poll();
+//			resp.add(entry.getKey());
+//
+//		}
+//
+//
+//	}
 
 }

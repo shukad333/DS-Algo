@@ -33,7 +33,7 @@ public class ShortestSubstring {
 	
 	public static void main(String[] args) {
 		
-		Arrays.asList(null);
+		//Arrays.asList(null);
 	}
 
 	public String shortestSuperstring(String[] A) {

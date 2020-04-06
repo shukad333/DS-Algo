@@ -63,6 +63,7 @@ public class MatchSticksToSquare {
 		
 		if(index==nums.length) {
 			return sum[0]==target && sum[1]==target && sum[2]==target;
+
 				
 		}
 		
