@@ -79,7 +79,7 @@ public class CouplesHoldingHands {
 
 	public static void main(String[] args) {
 
-		System.out.println(new CouplesHoldingHands().minSwapsCouples(new int[] {0, 2, 1, 3}));
+		System.out.println(new CouplesHoldingHands().minSwapsCouples(new int[] {5, 1, 3, 2,4,0}));
 
 	}
 
