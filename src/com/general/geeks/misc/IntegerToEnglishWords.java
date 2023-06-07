@@ -25,7 +25,7 @@ import java.util.Set;
 public class IntegerToEnglishWords {
 	
 	public static void main(String[] args) {
-		System.out.println(new IntegerToEnglishWords().numberToWords(1230123));
+		System.out.println(new IntegerToEnglishWords().numberToWords(34535623));
 	}
 
 	public String numberToWords(int num) {

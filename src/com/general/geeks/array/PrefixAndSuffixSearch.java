@@ -1,5 +1,6 @@
 package com.general.geeks.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,51 +24,56 @@ words[i] and prefix, suffix queries consist of lowercase letters only.
  * @author skadavath
  *
  */
+class TrieNode {
+	TrieNode[] children;
+	int weight;
+	public TrieNode() {
+		children = new TrieNode[27]; // 'a' - 'z' and '{'. 'z' and '{' are neighbours in ASCII table
+		weight = 0;
+	}
+}
+
 public class PrefixAndSuffixSearch {
-	
-	Map<String,Integer> map = new HashMap<>();
-	
+
+	public static void main(String[] args) {
+
+		PrefixAndSuffixSearch p = new PrefixAndSuffixSearch(new String[]{"apple"});
+		p.f("a","e");
+
+	}
+	TrieNode root;
 	public PrefixAndSuffixSearch(String[] words) {
-		
-		for(int i=0;i<words.length;i++) {
-			for(int j=0;j<=words[i].length();j++) {
-				
-				for(int k=0;k<=words[i].length();k++) {
-					
-					map.put(words[i].substring(0, j)+"#"+words[i].substring(words[i].length()-k), i);
-					
+		root = new TrieNode();
+		for (int weight = 0; weight < words.length; weight++) {
+			String word = words[weight] + "{";
+			for (int i = 0; i < word.length(); i++) {
+				TrieNode cur = root;
+				cur.weight = weight;
+				// add "apple{apple", "pple{apple", "ple{apple", "le{apple", "e{apple", "{apple" into the Trie Tree
+				for (int j = i; j < 2 * word.length() - 1; j++) {
+					int k = word.charAt(j % word.length()) - 'a';
+					if (cur.children[k] == null)
+						cur.children[k] = new TrieNode();
+					cur = cur.children[k];
+					cur.weight = weight;
 				}
-				
 			}
 		}
 	}
-	
-	 public int f(String prefix, String suffix) {
-		 
-		 if(map.containsKey(prefix+"#"+suffix))
-			 return map.get(prefix+"#"+suffix);
-		 
-		 return -1;
-		 
-	 }
-	
-	
-	
-	//below is a probable TLE
-//	String[] words;
-//	 public PrefixAndSuffixSearch(String[] words) {
-//	        this.words = words;
-//	    }
-//	    
-//	    public int f(String prefix, String suffix) {
-//	    	
-//	    	for(int i=words.length-1;i>=0;i--) {
-//	    		if(words[i].startsWith(prefix) && words[i].endsWith(suffix))
-//	    			return i;
-//	    	}
-//	    	
-//	    	return -1;
-//	        
-//	    }
-
+	public int f(String prefix, String suffix) {
+		TrieNode cur = root;
+		for (char c: (suffix + '{' + prefix).toCharArray()) {
+			if (cur.children[c - 'a'] == null) {
+				return -1;
+			}
+			cur = cur.children[c - 'a'];
+		}
+		return cur.weight;
+	}
 }
+
+/**
+ * Your WordFilter object will be instantiated and called as such:
+ * WordFilter obj = new WordFilter(words);
+ * int param_1 = obj.f(pref,suff);
+ */

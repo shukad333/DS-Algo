@@ -28,7 +28,11 @@ public class ThreadTest implements  Runnable{
 
 
 
+
+
         ThreadTest t = new ThreadTest();
+
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -60,11 +64,6 @@ public class ThreadTest implements  Runnable{
                 }
             }
         }).start();
-
-
-
-
-
 
     }
 

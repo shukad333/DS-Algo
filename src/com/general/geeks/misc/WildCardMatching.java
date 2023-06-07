@@ -42,7 +42,7 @@ public class WildCardMatching {
 		
 	}
 
-	public boolean isMatch(String s, String p) {
+	public boolean 	isMatch(String s, String p) {
 		
 		int m = s.length();
 		int n = p.length();

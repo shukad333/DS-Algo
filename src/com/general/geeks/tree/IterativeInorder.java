@@ -11,7 +11,11 @@ public class IterativeInorder {
 		node.right = new TreeNode(20);
 		node.left.left = new TreeNode(2);
 		node.left.right = new TreeNode(8);
-		
+		node.right.right = new TreeNode(18);
+		node.right.left = new TreeNode(28);
+		node.right.left.left = new TreeNode(128);
+		String s;
+
 		printInorder(node);
 		
 		

@@ -45,7 +45,9 @@ public class BinarySubArraysWithSum {
 		 * 
 		 * TLDR; Two Sum + Prefix Sum Caching
 
-Logic: In this problem we are required to find some interval [i:j] ,i < j where sum[i:j] = target. We know that sum[i:j] = A[i] + A[i+1] +... + A[j].
+Logic: In this problem we are required to find some interval [i:j] ,i < j
+		 where sum[i:j] = target. We know that sum[i:j] = A[i] + A[i+1] +... + A[j].
+
 Then we also know that
 Let's define prefixSum[j] = A[0] + A[1] + ... + A[j] 0 <= j <= n-1 (n = A.length)
 It is easy to see that,
@@ -58,9 +60,11 @@ prefix[j] - prefix[i-1] = target
 This becomes prefix[i-1] = prefix[j] - target with some algebra.
 So we use the hashmap to find all pairs that satisfy the above equations.
 
-We only need to track the prefix sum up to this point however, since we already saved all the previous results in the map.
+We only need to track the prefix sum up to this point however,
+		 since we already saved all the previous results in the map.
 
-if (sum == target) total++ Here I am checking for the case where the current element is equal to the sum (it needs no interval to produce the sum).
+if (sum == target) total++ Here I am checking for the case where the current
+		 element is equal to the sum (it needs no interval to produce the sum).
 		 * 
 		 */
 		

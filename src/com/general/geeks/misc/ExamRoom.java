@@ -40,16 +40,28 @@ import java.util.TreeSet;
  *
  */
 public class ExamRoom {
+
+	public static void main(String[] args) {
+
+		seat();
+		seat();
+		seat();
+		seat();
+		leave(4);
+		seat();
+
+
+	}
 	
-	TreeSet<Integer> treeSet ;
-	int totalStudents;
+	static TreeSet<Integer> treeSet = new TreeSet<>() ;
+	static int totalStudents = 10;
 	
 	public ExamRoom(int N) {
 		treeSet = new TreeSet<>();
 		totalStudents = N;
 	}
 
-	public int seat() {
+	public static int seat() {
 		
 		if(treeSet.isEmpty()) {
 			treeSet.add(0);
@@ -99,7 +111,7 @@ public class ExamRoom {
 
 	}
 
-	public void leave(int p) {
+	public static void leave(int p) {
 		treeSet.remove(p);
 	}
 

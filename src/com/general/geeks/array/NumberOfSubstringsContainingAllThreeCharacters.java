@@ -43,7 +43,7 @@ public class NumberOfSubstringsContainingAllThreeCharacters {
         List<Integer> l = new ArrayList<>();
         l.add(100);
 
-        System.out.println(new NumberOfSubstringsContainingAllThreeCharacters().numberOfSubstrings("abca"));
+        System.out.println(new NumberOfSubstringsContainingAllThreeCharacters().numberOfSubstrings("abcabc"));
 
     }
 

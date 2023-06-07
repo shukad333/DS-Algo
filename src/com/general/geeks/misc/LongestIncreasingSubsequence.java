@@ -1,6 +1,9 @@
 package com.general.geeks.misc;
 
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.EnumSet;
+import java.util.HashMap;
 
 /**
  * Given an unsorted array of integers, find the length of longest increasing
@@ -22,7 +25,10 @@ import java.util.Arrays;
 public class LongestIncreasingSubsequence {
 	
 	public static void main(String[] args) {
-		System.out.println(new LongestIncreasingSubsequence().lengthOfLISDP(new int[] {3,4,5,4,8}));
+//		System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(new int[] {3,4,5,4,8,1,10}));
+
+
+		System.out.println(new LongestIncreasingSubsequence().lengthOfLIS(new int[] {10,7,5,13,2}));
 	}
 
 	 public int lengthOfLIS(int[] nums) {            

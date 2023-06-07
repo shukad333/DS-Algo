@@ -2,6 +2,7 @@ package com.designpatterns.dp.multithreading;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
@@ -98,6 +99,9 @@ Runnable runn2 = new Runnable() {
 		s1 = new Semaphore(1);
 		s2 = new Semaphore(0);
 		s3 = new Semaphore(0);
+		Semaphore s4 = new Semaphore(12,true);
+		ScheduledExecutorService s = Executors.newScheduledThreadPool(12);
+
 
 	}
 

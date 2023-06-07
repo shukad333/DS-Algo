@@ -38,7 +38,7 @@ public class NumbersWithRepeatedDigits {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new NumbersWithRepeatedDigits().numDupDigitsAtMostN(123));
+		System.out.println(new NumbersWithRepeatedDigits().numDupDigitsAtMostN(8000));
 		
 	}
 

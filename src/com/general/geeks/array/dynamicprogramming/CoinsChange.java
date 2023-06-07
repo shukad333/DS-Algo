@@ -22,7 +22,7 @@ public class CoinsChange {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(new CoinsChange().coinChange(new int[] {1,2,4,6}, 31));
+		System.out.println(new CoinsChange().coinChange(new int[] {1,2,3}, 10));
 		
 	}
 

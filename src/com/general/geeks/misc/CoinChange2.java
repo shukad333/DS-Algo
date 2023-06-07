@@ -1,5 +1,7 @@
 package com.general.geeks.misc;
 
+import com.general.geeks.array.dynamicprogramming.CoinsChange;
+
 /**
  * You are given coins of different denominations and a total amount of money. Write a function to compute the number of combinations that make up that amount. You may assume that you have infinite number of each kind of coin.
 
@@ -33,10 +35,30 @@ Explanation: the amount of 3 cannot be made up just with coins of 2.
  */
 public class CoinChange2 {
 
-	public int change(int amount, int[] coins) {
-		
-		return 0;
+	public static void main(String[] args) {
+
+		CoinChange2 coinChange2 = new CoinChange2();
+		int resp = coinChange2.change(5,new int[]{1,2,5});
+		System.out.println(resp);
+
+
 
 	}
 
-}
+	public int change(int amount, int[] coins) {
+		int[][] dp = new int[coins.length+1][amount+1];
+		dp[0][0] = 1;
+
+		for(int i=1;i<=coins.length;i++) {
+			dp[i][0] = 1;
+			for(int j=1;j<=amount;j++) {
+
+				dp[i][j] = dp[i-1][j] + (j>=coins[i-1]?dp[i][j-coins[i-1]]:0);
+
+			}
+		}
+
+		return dp[coins.length][amount];
+	}
+
+	}
